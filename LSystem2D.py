@@ -13,9 +13,11 @@ class LSystem2D:
         self.t = turtle.Turtle()
         self.length = length
 
-    def _generate_l_system(self):
+    def _generate_l_system(self):  # Создается L-система
         for _ in range(self.iters):
             for key, value in self.rules.items():
+                """В пути, который изначально равен аксиоме заменяется каждый найденый """
+                """символ (ключ) на соответствующее значение из словаря правил"""
                 self.path = self.path.replace(key, value)
 
     def draw_turtle(self, length=8, size=2, start_pos=(0, 0), start_angle=0, width=600, height=600, ht=True):
